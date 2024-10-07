@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3000:3000'
+    environment:
+      - NODE_ENV=production
+      - POSTS_URL=https://jsonplaceholder.typicode.com/posts
+      - USERS_URL=https://jsonplaceholder.typicode.com/users
+      - COMMENTS_URL=https://jsonplaceholder.typicode.com/posts
+    volumes:
+      - .:/app
